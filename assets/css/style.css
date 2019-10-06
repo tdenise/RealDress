@@ -62,7 +62,7 @@ table {
     left:100px;
     right: 100px;
     background-color: rebeccapurple;
-    background-image: url(/assets/img/resized_background.png);  
+    background-image: url("/assets/img/resized_background.png");  
 }
 
     
