@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
 	if(in_array($fileActualExt, $allowedExt)){
 		if($filesError === 0){
 			$fileNameNew = reset($fileExt)."_".uniqid('', true).".".$fileActualExt;
-			$fileDestination = '../../uploaded_images/'.$fileNameNew;
+			$fileDestination = '../img/'.$fileNameNew;
 			move_uploaded_file($filesTmpName, $fileDestination);
 			header("Location: ../../index.html?uploadsuccess");
 		} else {
