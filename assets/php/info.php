@@ -4,7 +4,7 @@ if (isset($_POST['height']) && isset($_POST['weight']) && isset($_POST['chest'])
 	$weight = $_POST['weight'];
 	$chest = $_POST['chest'];
 	$hips = $_POST['hips'];
-	$targetFolder = "../../user_measurements/";
+	$targetFolder = "../profile/";
 	$fileName = $targetFolder."User_".uniqid('', true).".txt";
 	/* File Output Format:
 	height value
