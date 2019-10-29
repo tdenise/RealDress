@@ -1,4 +1,6 @@
 <?php
+session_start();
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
 if (isset($_POST['submitD'])) {
 	$file = $_FILES['file'];
 	
@@ -57,5 +59,8 @@ if (isset($_POST['submitD'])) {
 		echo "Valid File Types: jpg, jpeg, png";
 		header("Location: ../../upload.html?uploadFail");
 	}
+}
+} else {
+	header("Location: ../../login.html?adminLogin");
 }
 ?>
