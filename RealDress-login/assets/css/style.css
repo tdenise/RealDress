@@ -1,51 +1,47 @@
 
 #container{
-    position: absolute;
+    position: relative;
     margin: auto;
-    width: 755px;
-    height: 987px;
+    width: 555px;
+    height: 787px;
 }
 
 #background{
-    position:absolute;
-    width:555px;
-    height:987px;
+/*    position:absolute;*/
+    width:525px;
+    height:788px;
     left:100px;
     right: 100px;
-    background-color: rebeccapurple;
-    background-image: url("/assets/img/resized_background.png");  
+    background-color: dimgray;
 }
 
     
 #man{
     position:absolute;
     width:555px;
-    height:987px;
-    
+    height:855px;
     background-image: url("/assets/img/body.png");
 
 }
 
 #clothes{
-    
     position:absolute;
     width:555px;
-    height:987px;    
+    height:855px;    
 }
 
 .dress1{
     
     position:absolute;
     width:555px;
-    height:987px;
+    height:855px;
     background-image: url("/assets/img/dress1.png");
 }
 
 .dress2{
-    
     position:absolute;
     width:555px;
-    height:987px;
+    height:855px;
     background-image: url("/assets/img/dress2.png");
 }
 
@@ -53,7 +49,7 @@
     
     position:absolute;
     width:555px;
-    height:987px;
+    height:855px;
     background-image: url("/assets/img/dress3.png");
 }
 
@@ -69,5 +65,3 @@
     top:400px;
 }
 
-input[type=button], button, .button{ 
-}
