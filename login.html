@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Upload</title>
+      <title>Login</title>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
       <link rel="stylesheet" href="assets/css/main.css" />
@@ -9,7 +9,7 @@
          <link rel="stylesheet" href="assets/css/noscript.css" />
       </noscript>
    </head>
-   <body>
+   <body class="landing is-preload">
       <!-- Page Wrapper -->
       <div id="page-wrapper">
          <!-- Header -->
@@ -31,11 +31,20 @@
                </ul>
             </nav>
          </header>
-         <form action="assets/php/upload.php" method="POST" enctype="multipart/form-data">
-            <input type="file" name="file">
-            <button type="submit" name="submitD">Upload Image to Database</button>
-            <button type="submit" name="submitG">Upload Image to Gallery</button>
+         <form id='login' action='assets/php/login.php' method='post' accept-charset='UTF-8'>
+            <fieldset >
+               <legend>Login</legend>
+               <input type='hidden' name='submitted' id='submitted' value='1'/>
+               <label for='username' >UserName:</label>
+               <input type='text' name='username' id='username'  maxlength="50" />
+               <label for='password' >Password:</label>
+               <input type='password' name='password' id='password' maxlength="50" />
+               <button type='submit' name='login'>Login</button>
+            </fieldset>
          </form>
+		 <form id='logout' action='assets/php/logout.php' method='post' accept-charset='UTF-8'>
+			<button type='submit' name='logout'>Logout</button>
+		 </form>
       </div>
       <!-- Scripts -->
       <script src="assets/js/jquery.min.js"></script>
