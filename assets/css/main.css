@@ -2416,6 +2416,7 @@ input, select, textarea {
 		border-radius: 3px;
 		border: 0;
 		box-shadow: inset 0 0 0 2px #fff;
+		height: 100%;
 		color: #fff;
 		cursor: pointer;
 		display: inline-block;
@@ -2487,6 +2488,7 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
+			justify-content: center;
 			background-color: #f5bf5b;
 			box-shadow: none !important;
 			color: #ffffff !important;
@@ -4011,6 +4013,7 @@ input, select, textarea {
 
     /* Style the submit button */
     input[type=submit] {
+      height: 100%;
       width: 100%;
       background-color: #4CAF50;
       color: white;
