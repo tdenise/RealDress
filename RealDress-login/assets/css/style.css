@@ -1,0 +1,73 @@
+
+#container{
+    position: absolute;
+    margin: auto;
+    width: 755px;
+    height: 987px;
+}
+
+#background{
+    position:absolute;
+    width:555px;
+    height:987px;
+    left:100px;
+    right: 100px;
+    background-color: rebeccapurple;
+    background-image: url("/assets/img/resized_background.png");  
+}
+
+    
+#man{
+    position:absolute;
+    width:555px;
+    height:987px;
+    
+    background-image: url("/assets/img/body.png");
+
+}
+
+#clothes{
+    
+    position:absolute;
+    width:555px;
+    height:987px;    
+}
+
+.dress1{
+    
+    position:absolute;
+    width:555px;
+    height:987px;
+    background-image: url("/assets/img/dress1.png");
+}
+
+.dress2{
+    
+    position:absolute;
+    width:555px;
+    height:987px;
+    background-image: url("/assets/img/dress2.png");
+}
+
+.dress3{
+    
+    position:absolute;
+    width:555px;
+    height:987px;
+    background-image: url("/assets/img/dress3.png");
+}
+
+#nextdress{
+    position:absolute;
+    right:50px;
+    top:400px;
+}
+
+#prevdress{
+    position:absolute;
+    left:50px;
+    top:400px;
+}
+
+input[type=button], button, .button{ 
+}
