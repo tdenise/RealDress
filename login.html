@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Wedding Dress Visualizor</title>
+      <title>Login</title>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
       <link rel="stylesheet" href="assets/css/main.css" />
-      <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
       <noscript>
          <link rel="stylesheet" href="assets/css/noscript.css" />
       </noscript>
@@ -33,13 +31,20 @@
                </ul>
             </nav>
          </header>
-         <div id="container">
-            <div id="background">
-               <div id="man"> </div>
-               <div id="clothes"> </div>
-            </div>
-            <input type="button" value="NEXT" id="nextdress" onclick="nextdress()">
-         </div>
+         <form id='login' action='assets/php/login.php' method='post' accept-charset='UTF-8'>
+            <fieldset >
+               <legend>Login</legend>
+               <input type='hidden' name='submitted' id='submitted' value='1'/>
+               <label for='username' >UserName:</label>
+               <input type='text' name='username' id='username'  maxlength="50" />
+               <label for='password' >Password:</label>
+               <input type='password' name='password' id='password' maxlength="50" />
+               <button type='submit' name='login'>Login</button>
+            </fieldset>
+         </form>
+		 <form id='logout' action='assets/php/logout.php' method='post' accept-charset='UTF-8'>
+			<button type='submit' name='logout'>Logout</button>
+		 </form>
       </div>
       <!-- Scripts -->
       <script src="assets/js/jquery.min.js"></script>
@@ -49,6 +54,5 @@
       <script src="assets/js/breakpoints.min.js"></script>
       <script src="assets/js/util.js"></script>
       <script src="assets/js/main.js"></script>
-      <script src="assets/js/code.js"></script>
    </body>
 </html>
