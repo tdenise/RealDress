@@ -1,15 +1,15 @@
+<!DOCTYPE html>
 <html>
    <head>
-      <title>Wedding Dress Visualizor</title>
+      <title>Upload</title>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
       <link rel="stylesheet" href="assets/css/main.css" />
-      <link rel="stylesheet" href="assets/css/style.css" />
       <noscript>
          <link rel="stylesheet" href="assets/css/noscript.css" />
       </noscript>
    </head>
-   <body class="landing is-preload">
+   <body>
       <!-- Page Wrapper -->
       <div id="page-wrapper">
          <!-- Header -->
@@ -31,16 +31,19 @@
                </ul>
             </nav>
          </header>
-         <div id="container">
-            <div id="background">
-               <div id="man"> </div>
-               <div id="clothes"> </div>
-            </div>
-            <input type="button" value="NEXT" id="nextdress" onclick="nextdress()">
-        </div>
-
-        <script src="assets/js/code.js"></script>
-    
-    </body>
-
+         <form action="assets/php/upload.php" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <button type="submit" name="submitD">Upload Image to Database</button>
+            <button type="submit" name="submitG">Upload Image to Gallery</button>
+         </form>
+      </div>
+      <!-- Scripts -->
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/jquery.scrollex.min.js"></script>
+      <script src="assets/js/jquery.scrolly.min.js"></script>
+      <script src="assets/js/browser.min.js"></script>
+      <script src="assets/js/breakpoints.min.js"></script>
+      <script src="assets/js/util.js"></script>
+      <script src="assets/js/main.js"></script>
+   </body>
 </html>
