@@ -1,6 +1,8 @@
 # RealDress
 Wow! Try on a real wedding dress!
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 1. To run: download and install web hosting service (ie: wamp)
   http://www.wampserver.com/en/
   
