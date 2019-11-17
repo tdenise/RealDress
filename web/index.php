@@ -36,7 +36,7 @@ require('vendor/autoload.php');
 // this will simply read AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY from env vars
 $s3 = new Aws\S3\S3Client([
     'version'  => '2006-03-01',
-    'region'   => 'us-east-1',
+    'region'   => 'us-west-1',
 ]);
 $bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
 ?>
@@ -61,3 +61,41 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES
         </form>
     </body>
 </html>
+
+<!--
+<?php
+$access_key 		= "iam-user-access-key"; //Access Key
+$secret_key 		= "iam-user-secret-key"; //Secret Key
+$my_bucket			= "mybucket"; //bucket name
+$region				= "us-east-1"; //bucket region
+$success_redirect	= 'http://'. $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; //URL to which the client is redirected upon success (currently self) 
+$allowd_file_size	= "1048579"; //1 MB allowed Size
+
+//dates
+$short_date 		= gmdate('Ymd'); //short date
+$iso_date 			= gmdate("Ymd\THis\Z"); //iso format date
+$expiration_date 	= gmdate('Y-m-d\TG:i:s\Z', strtotime('+1 hours')); //policy expiration 1 hour from now
+
+//POST Policy required in order to control what is allowed in the request
+//For more info http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-HTTPPOSTConstructPolicy.html
+$policy = utf8_encode(json_encode(array(
+					'expiration' => $expiration_date,  
+					'conditions' => array(
+						array('acl' => 'public-read'),  
+						array('bucket' => $my_bucket), 
+						array('success_action_redirect' => $success_redirect),
+						array('starts-with', '$key', ''),
+						array('content-length-range', '1', $allowd_file_size), 
+						array('x-amz-credential' => $access_key.'/'.$short_date.'/'.$region.'/s3/aws4_request'),
+						array('x-amz-algorithm' => 'AWS4-HMAC-SHA256'),
+						array('X-amz-date' => $iso_date)
+						)))); 
+
+//Signature calculation (AWS Signature Version 4)	
+//For more info http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html	
+$kDate = hash_hmac('sha256', $short_date, 'AWS4' . $secret_key, true);
+$kRegion = hash_hmac('sha256', $region, $kDate, true);
+$kService = hash_hmac('sha256', "s3", $kRegion, true);
+$kSigning = hash_hmac('sha256', "aws4_request", $kService, true);
+$signature = hash_hmac('sha256', base64_encode($policy), $kSigning);
+?>-->
