@@ -10,24 +10,6 @@ $s3 = new Aws\S3\S3Client([
 $bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
 ?>
 
-<html>
-    <head><meta charset="UTF-8"></head>
-    <body>
-        <h1>S3 upload example</h1>
-<?php
-session_start();
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['myfile']) && $_FILES['myfile']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['myfile']['tmp_name'])) {
-    // FIXME: add more validation, e.g. using ext/fileinfo
-    try {
-        $upload = $s3->upload($bucket, $_FILES['myfile']['name'], fopen($_FILES['myfile']['tmp_name'], 'rb'), 'public-read');
-?>
-        <p>Upload <a href="<?=htmlspecialchars($upload->get('ObjectURL'))?>">successful</a> :)</p>
-<?php } catch(Exception $e) { ?>
-        <p>Upload error :(</p>
-<?php } } ?>
-    </body>
-</html>
 
 
 <!--_____________________________________________________-->
