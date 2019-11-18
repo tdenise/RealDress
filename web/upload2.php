@@ -17,11 +17,10 @@ $bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!'
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
 if (isset($_POST['submitD'])) {	
-	$filesName = $_FILES['file']['name'];
-	$filesTmpName = $_FILES['file']['tmp_name'];
-	$filesSize = $_FILES['file']['size'];
-	$filesType = $_FILES['file']['type'];
-    $filesError = $_FILES['file']['error'];
+	$filesName = $_FILES['myfile']['name'];
+	$filesTmpName = $_FILES['myfile']['tmp_name'];
+	$filesSize = $_FILES['myfile']['size'];
+	$filesType = $_FILES['myfile']['type'];
 
 	$fileExt = explode('.', $filesName);
 	$fileActualExt = strtolower(end($fileExt));
