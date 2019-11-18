@@ -27,7 +27,7 @@ if (isset($_POST['submitD'])) {
 	
 	$allowedExt = array('jpg', 'jpeg', 'png');
 	
-	if(in_array($fileActualExt, $allowedExt) && $_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['myfile']) && $_FILES['myfile']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['myfile']['tmp_name'])){
+	if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['myfile']) && $_FILES['myfile']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['myfile']['tmp_name'])){
 		if($filesError === 0){
             $upload = $s3->upload($bucket, $_FILES['myfile']['name'], fopen($_FILES['myfile']['tmp_name'], 'rb'), 'public-read');
 			header("Location: ../../index.html?uploadsuccess");
