@@ -21,6 +21,7 @@ if (isset($_POST['submitD'])) {
 	$filesTmpName = $_FILES['file']['tmp_name'];
 	$filesSize = $_FILES['file']['size'];
 	$filesType = $_FILES['file']['type'];
+    $filesError = $_FILES['file']['error'];
 
 	$fileExt = explode('.', $filesName);
 	$fileActualExt = strtolower(end($fileExt));
