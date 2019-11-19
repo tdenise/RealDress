@@ -4,7 +4,7 @@ require('vendor/autoload.php');
 
 // this will simply read AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY from env vars
 $s3 = new Aws\S3\S3Client([
-    'version'  => '2006-03-01',
+    'version'  => 'latest',
     'region'   => 'us-west-1',
 ]);
 $bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
@@ -17,10 +17,10 @@ $bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!'
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
 if (isset($_POST['submitD'])) {	
-	$filesName = $_FILES['myfile']['name'];
-	$filesTmpName = $_FILES['myfile']['tmp_name'];
-	$filesSize = $_FILES['myfile']['size'];
-	$filesType = $_FILES['myfile']['type'];
+	$filesName = $_FILES['file']['name'];
+	$filesTmpName = $_FILES['file']['tmp_name'];
+	$filesSize = $_FILES['file']['size'];
+	$filesType = $_FILES['file']['type'];
 
 	$fileExt = explode('.', $filesName);
 	$fileActualExt = strtolower(end($fileExt));
