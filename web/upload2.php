@@ -49,7 +49,7 @@
 	} catch (Exception $e) {
 		die('Error:' . $e->getMessage());
 	}
-	echo 'Done';
+	header("Location: ../index.html?uploadsuccess");
 	
 
 	// Now that you have it working, I recommend adding some checks on the files.
