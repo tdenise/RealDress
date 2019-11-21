@@ -30,7 +30,7 @@
 	}
 	
 	// For this, I would generate a unqiue random string for the key name. But you can do whatever.
-	$keyName = 'test_example/' . basename($_FILES['myFile']['name']);
+	$keyName = 'user_uploads/' . basename($_FILES['myFile']['name']);
 	$pathInS3 = 'https://s3.us-west-1.amazonaws.com/' . $bucketName . '/' . $keyName;
 	// Add it to S3
 	try {
@@ -49,7 +49,7 @@
 	} catch (Exception $e) {
 		die('Error:' . $e->getMessage());
 	}
-	header("Location: ../index.html?uploadsuccess");
+	header("Location: ../upload.html?uploadsuccess");
 	
 
 	// Now that you have it working, I recommend adding some checks on the files.
