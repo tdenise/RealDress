@@ -27,7 +27,7 @@ if (isset($_POST['submitD'])) {
 		}
 	} else {
 		echo "Invalid File Type\n";
-		echo "Valid File Types: jpg, jpeg, png";
+		echo "Valid File Types: png";
 		header("Location: ../../upload.html?uploadFail");
 	}
 } else if(isset($_POST['submitG'])) {

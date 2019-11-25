@@ -34,7 +34,12 @@
 	$keyName = 'user_uploads/' . basename($_FILES['myFile']['name']);
 	$pathInS3 = 'https://s3.us-west-1.amazonaws.com/' . $bucketName . '/' . $keyName;
 	// Add it to S3
+	$fileExt = explode('.', $_FILES['myFile']['name']);
+	$fileActualExt = strtolower(end($fileExt));
+	$fileActualExt = strtolower(end($fileExt));
+	$allowedExt = array('png');
 	try {
+		if(in_array($fileActualExt, $allowedExt)){
 		// Uploaded:
 		$file = $_FILES['myFile']['tmp_name'];
 		$s3->putObject(
@@ -45,6 +50,10 @@
 				'StorageClass' => 'REDUCED_REDUNDANCY'
 			)
 		);
+		} else {
+			echo "Invalid File Type\n";
+			header("Location: ../upload.html?uploadFail");
+		}
 	} catch (S3Exception $e) {
 		header("Location: ../upload.html?uploadFail");
 		//echo'Error: ' . $e->getMessage();
