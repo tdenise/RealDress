@@ -46,11 +46,13 @@
 			)
 		);
 	} catch (S3Exception $e) {
-		die('Error:' . $e->getMessage());
+		echo'Error: ' . $e->getMessage();
+	header("Location: ../upload.html?uploadFail");
 	} catch (Exception $e) {
-		die('Error:' . $e->getMessage());
+		echo 'Error: ' . $e->getMessage();
+	header("Location: ../upload.html?uploadFail");
 	}
-	header("Location: ../upload.html?uploadsuccess");
+	header("Location: ../upload.html?uploadSuccess");
 
 	// Now that you have it working, I recommend adding some checks on the files.
 	// Example: Max size, allowed file types, etc.
