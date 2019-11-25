@@ -46,11 +46,11 @@
 			)
 		);
 	} catch (S3Exception $e) {
+		header("Location: ../upload.html?uploadFail");
 		echo'Error: ' . $e->getMessage();
-	header("Location: ../upload.html?uploadFail");
 	} catch (Exception $e) {
+		header("Location: ../upload.html?uploadFail");
 		echo 'Error: ' . $e->getMessage();
-	header("Location: ../upload.html?uploadFail");
 	}
 	header("Location: ../upload.html?uploadSuccess");
 
