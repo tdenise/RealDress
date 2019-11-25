@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
 	require '../vendor/autoload.php';
 	
 	use Aws\S3\S3Client;
@@ -50,7 +51,9 @@
 		die('Error:' . $e->getMessage());
 	}
 	header("Location: ../upload.html?uploadsuccess");
-	
+} else {
+	header("Location: ../login.html?adminLogin");
+}
 
 	// Now that you have it working, I recommend adding some checks on the files.
 	// Example: Max size, allowed file types, etc.
