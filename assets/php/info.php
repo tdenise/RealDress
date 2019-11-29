@@ -51,7 +51,6 @@ if (isset($_POST['height']) && isset($_POST['chest']) && isset($_POST['waist']) 
 	
 //$size_calculated
 	$size_calculated = ($size_chest + $size_waist + $size_hips)/3;
-	echo $size_calculated;
 	
 	$targetFolder = "../profile/";
 	$fileName = $targetFolder."User_".uniqid('', true).".txt";
@@ -65,6 +64,7 @@ if (isset($_POST['height']) && isset($_POST['chest']) && isset($_POST['waist']) 
 	file_put_contents($fileName, $waist."\n", FILE_APPEND);
 	file_put_contents($fileName, $chest."\n", FILE_APPEND);
 	file_put_contents($fileName, $hips."\n", FILE_APPEND);
+	file_put_contents($fileName, $size_calculated."\n", FILE_APPEND);
 	header("Location: ../../index.html?userfilecreated");
 }
 ?>
