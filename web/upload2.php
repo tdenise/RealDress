@@ -63,6 +63,15 @@
 	}
 	header("Location: ../upload.html?uploadSuccess");
 
-	// Now that you have it working, I recommend adding some checks on the files.
-	// Example: Max size, allowed file types, etc.
+    // Save file to files table - TODO
+
+    // Create access code
+    
+    $ACCESS_CODE = '1234567';
+
+    $con = mysqli_connect('localost', 'root', 'root', 's3DB') or die('Error: Unable to connect');
+    
+    mysqli_query($con, "INSERT INTO s3Files(s3FilePath, accessCode) VALUES ('$keyName', '$ACCESS_CODE')") or die ('error: not able to save');
+    
+    echo 'Done';
 ?>
