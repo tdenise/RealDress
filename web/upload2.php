@@ -31,8 +31,12 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
 		die("Error: " . $e->getMessage());
 	}
 	
-	// For this, I would generate a unqiue random string for the key name. But you can do whatever.
-	$keyName = 'user_uploads/' . "dress_" . basename($_FILES['myFile']['name']);
+	//Logic to determine if upload is body or image
+	if (isset($_POST['submitB'])) {
+		$keyName = 'user_uploads/' . "body_" . basename($_FILES['myFile']['name']);
+	} elseif (isset($_POST['submitD'])) {
+		$keyName = 'user_uploads/' . "dress_" . basename($_FILES['myFile']['name']);
+	}
 	$pathInS3 = 'https://s3.us-west-1.amazonaws.com/' . $bucketName . '/' . $keyName;
 	// Add it to S3
 	$fileExt = explode('.', $_FILES['myFile']['name']);
