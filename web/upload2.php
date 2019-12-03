@@ -1,6 +1,4 @@
 <?php
-//session_start();
-//if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
 	require '../vendor/autoload.php';
 	
 	use Aws\S3\S3Client;
@@ -9,6 +7,9 @@
 	$bucketName = 'realdress';
 	$IAM_KEY = 'AKIA5FXIKMXZYLR7J3QX';
 	$IAM_SECRET = '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';
+session_start();
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+
 	// Connect to AWS
 	try {
 		// You may need to change the region. It will say in the URL when the bucket is open
@@ -74,4 +75,7 @@
     mysqli_query($con, "INSERT INTO s3Files(s3FilePath, accessCode) VALUES ('$keyName', '$ACCESS_CODE')") or die ('error: not able to save');
     
     echo 'Done';
+} else {
+	header("Location: ../../login.html?adminLogin");
+}
 ?>
