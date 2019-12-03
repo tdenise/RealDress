@@ -15,5 +15,7 @@ session_start();
 		} else {
 			header("Location: ../../login.html?invalidCredentials");
         }
-    }
+    } else {
+		header("Location: ../../login.html?emptyCredentials");
+	}
 ?>
