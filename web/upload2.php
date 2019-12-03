@@ -33,7 +33,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
 	
 	// For this, I would generate a unqiue random string for the key name. But you can do whatever.
 	$keyName = 'user_uploads/' . basename($_FILES['myFile']['name']);
-	$pathInS3 = 'https://s3.us-west-1.amazonaws.com/' . $bucketName . '/' . $keyName;
+	$pathInS3 = 'https://s3.us-west-1.amazonaws.com/' . $bucketName . '/' . $keyName . "dress";
 	// Add it to S3
 	$fileExt = explode('.', $_FILES['myFile']['name']);
 	$fileActualExt = strtolower(end($fileExt));
