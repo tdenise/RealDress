@@ -62,12 +62,15 @@
 		{
 			this.element = element;
 			this.next = null;
+			//potentially for keeping track of which dress is displayed
+			this.id = null;
 		}
 	  }
 	  class LinkedList{
 		constructor()
 		{
 			this.head = null;
+			this.it = null;
 			this.size = 0;
 		}
 		add(element)
@@ -84,17 +87,18 @@
 				current.next = node; 
 			} 
 			this.size++;
+			this.head.id = size;
 		} 
 	  }
-	  console.log("yahtee");
 		var dressList = new LinkedList();
 		dressList.add("/assets/img/dress1.png");
 		dressList.add("/assets/img/dress2.png");
 		dressList.add("/assets/img/dress3.png");
-	
+		var currentDress = 0;
 		function changeDress()
 		{
 			var curr = dressList.head;
+			//add logic for displaying dresses in order with list.element.id
 			curr = curr.next;
 			document.getElementById("clothes").style.backgroundImage = "url(" + curr.element + ")";
 			
