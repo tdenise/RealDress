@@ -12,7 +12,7 @@
   $accessCode = addslashes($accessCode);
   $accessCode = htmlspecialchars($accessCode);
   // Connect to database
-  $con = mysqli_connect('localhost', 'root', 'root', 's3DB') or die('Error: Unable to connect');
+  $con = mysqli_connect('localhost', 'root', 'root') or die('Error: Unable to connect');
   // Verify valid access code
   $result = mysqli_query($con, "SELECT * FROM s3Files WHERE accessCode='$accessCode'") or die("Error: Invalid request");
   if (mysqli_num_rows($result) != 1) {
