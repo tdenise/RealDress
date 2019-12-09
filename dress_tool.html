@@ -98,10 +98,10 @@
 		function changeDress()
 		{
 			var curr = dressList.head;
-			while(curr.element.id < currentDress){
+			while(curr.id < currentDress){
 				curr = curr.next;
 			}
-			currentDress = curr.element.id;
+			currentDress = curr.id;
 			//add logic for displaying dresses in order with list.element.id
 			document.getElementById("clothes").style.backgroundImage = "url(" + curr.element + ")";
 			
