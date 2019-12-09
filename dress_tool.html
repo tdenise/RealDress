@@ -77,10 +77,10 @@
 		{
 			var node = new Node(element);
 			var current;
-			if (this.head == null) 
+			if (this.head == null) { 
 				this.head = node; 
 				this.head.id = this.size;
-			else { 
+			} else { 
 				current = this.head;  
 				while (current.next) { 
 					current = current.next; 
