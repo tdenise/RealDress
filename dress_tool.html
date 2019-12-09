@@ -103,9 +103,13 @@
 			//console.log("currdress "+currentDress);
 			//while(curr.id <= currentDress){
 				///console.log("inside while");
+				if(curr.next != null){
 				curr = curr.next;
+				} else {
+				curr = dressList.head;
+				}
 			//}
-			currentDress = curr.id;
+			//currentDress = curr.id;
 			//add logic for displaying dresses in order with list.element.id
 			document.getElementById("clothes").style.backgroundImage = "url(" + curr.element + ")";
 			
