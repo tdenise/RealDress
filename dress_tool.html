@@ -99,10 +99,10 @@
 		function changeDress()
 		{
 			var curr = dressList.head;
-			console.log(curr.id);
-			while(curr.id < currentDress){
-				console.log(currentDress);
-				
+			console.log("currid "+curr.id);
+			console.log("currdress "+currentDress);
+			while(curr.id <= currentDress){
+				console.log("inside while");
 				curr = curr.next;
 			}
 			currentDress = curr.id;
