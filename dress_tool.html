@@ -62,8 +62,6 @@
 		{
 			this.element = element;
 			this.next = null;
-			//potentially for keeping track of which dress is displayed
-			this.id = 1;
 		}
 	  }
 	  class LinkedList{
@@ -84,35 +82,24 @@
 					current = current.next; 
 				} 
 				current.next = node; 
-				current.id = this.size + 1;
 			} 
 			this.size++;
-			
 		} 
 	  }
 		var dressList = new LinkedList();
 		dressList.add("/assets/img/dress1.png");
 		dressList.add("/assets/img/dress2.png");
 		dressList.add("/assets/img/dress3.png");
-		var currentDress = 0;
+
 		var curr = dressList.head;
 		function changeDress()
 		{
-			
-			//console.log("currid "+curr.id);
-			//console.log("currdress "+currentDress);
-			//while(curr.id <= currentDress){
-				///console.log("inside while");
+			document.getElementById("clothes").style.backgroundImage = "url(" + curr.element + ")";
 				if(curr.next != null){
 				curr = curr.next;
 				} else {
 				curr = dressList.head;
-				}
-			//}
-			//currentDress = curr.id;
-			//add logic for displaying dresses in order with list.element.id
-			document.getElementById("clothes").style.backgroundImage = "url(" + curr.element + ")";
-			
+				}	
 		}
 		
 	  </script>
