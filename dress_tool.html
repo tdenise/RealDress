@@ -71,17 +71,17 @@
 			} 
 			this.size++;
 		}
-		function changeDress()
-		{
-			var curr = this.head;
-			curr = curr.next;
-			document.getElementById("clothes").style.background-image = curr;
-		}
 	  }
 		var dressList = new LinkedList();
 		dressList.add("/assets/img/dress1.png");
 		dressList.add("/assets/img/dress2.png");
 		dressList.add("/assets/img/dress3.png");
+		function changeDress()
+		{
+			var curr = dressList.head;
+			curr = curr.next;
+			document.getElementById("clothes").style.background-image = curr;
+		}
 		
 	  </script>
 			
