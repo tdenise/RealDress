@@ -87,7 +87,7 @@
 				current.next = node; 
 			} 
 			this.size++;
-			this.head.id = size;
+			this.head.id = this.size;
 		} 
 	  }
 		var dressList = new LinkedList();
@@ -98,8 +98,11 @@
 		function changeDress()
 		{
 			var curr = dressList.head;
+			while(curr.element.id < currentDress){
+				curr = curr.next;
+			}
+			currentDress = curr.element.id;
 			//add logic for displaying dresses in order with list.element.id
-			curr = curr.next;
 			document.getElementById("clothes").style.backgroundImage = "url(" + curr.element + ")";
 			
 		}
