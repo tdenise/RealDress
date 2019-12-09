@@ -70,7 +70,6 @@
 		constructor()
 		{
 			this.head = null;
-			this.it = null;
 			this.size = 0;
 		}
 		add(element)
@@ -85,7 +84,7 @@
 					current = current.next; 
 				} 
 				current.next = node; 
-				current.id = this.size;
+				current.id = this.size + 1;
 			} 
 			this.size++;
 			
@@ -95,16 +94,17 @@
 		dressList.add("/assets/img/dress1.png");
 		dressList.add("/assets/img/dress2.png");
 		dressList.add("/assets/img/dress3.png");
-		var currentDress = 1;
+		var currentDress = 0;
+		var curr = dressList.head;
 		function changeDress()
 		{
-			var curr = dressList.head;
-			console.log("currid "+curr.id);
-			console.log("currdress "+currentDress);
-			while(curr.id <= currentDress){
-				console.log("inside while");
+			
+			//console.log("currid "+curr.id);
+			//console.log("currdress "+currentDress);
+			//while(curr.id <= currentDress){
+				///console.log("inside while");
 				curr = curr.next;
-			}
+			//}
 			currentDress = curr.id;
 			//add logic for displaying dresses in order with list.element.id
 			document.getElementById("clothes").style.backgroundImage = "url(" + curr.element + ")";
