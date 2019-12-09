@@ -40,7 +40,9 @@
                <div id="clothes"> </div>
             </div>
 
-            <input type="button" value="NEXT" id="nextdress" onclick="nextdress()">
+            <!--<input type="button" value="NEXT" id="nextdress" onclick="nextdress()">
+			-->
+			<input type="button" value="NEXT" id="nextdress" onclick="changeDress()">
          </div>
       </div>
       <!-- Scripts -->
@@ -52,5 +54,48 @@
       <script src="assets/js/util.js"></script>
       <script src="assets/js/main.js"></script>
       <script src="assets/js/code.js"></script>
+	  
+	  <script>
+	  class Node {
+		constructor(element)
+		{
+			this.element = element;
+			this.next = null;
+		}
+	  }
+	  class LinkedList{
+		constructor()
+		{
+			this.head = null;
+			this.size = 0;
+		}
+		add(element)
+		{
+			var node = new Node(element);
+			var current;
+			if (this.head == null) 
+				this.head = node; 
+			else { 
+				current = this.head;  
+				while (current.next) { 
+					current = current.next; 
+				} 
+				current.next = node; 
+			} 
+			this.size++;
+		}
+		changeDress()
+		{
+			var curr = this.head;
+			curr = curr.next;
+			document.getElementById("clothes").style.background-image = curr;
+		}
+	  }
+		var dressList = new LinkedList();
+		dressList.add("/assets/img/dress1.png");
+		dressList.add("/assets/img/dress2.png");
+		dressList.add("/assets/img/dress3.png");
+		
+	  </script>
    </body>
 </html>
