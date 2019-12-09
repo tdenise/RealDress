@@ -2,17 +2,17 @@
     $bucketName = 'realdress';
     $IAM_KEY = 'AKIA5FXIKMXZYLR7J3QX';
 	$IAM_SECRET = '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';
-  require '/vendor/autoload.php';
+  require '../vendor/autoload.php';
   use Aws\S3\S3Client;
   use Aws\S3\Exception\S3Exception;
   // Get the access code
   $accessCode = $_GET['c'];
-	$accessCode = strtoupper($accessCode);
+  $accessCode = strtoupper($accessCode);
   $accessCode = trim($accessCode);
   $accessCode = addslashes($accessCode);
   $accessCode = htmlspecialchars($accessCode);
   // Connect to database
-  $con = mysqli_connect('localost', 'root', 'root', 's3DB') or die('Error: Unable to connect');
+  $con = mysqli_connect('localhost', 'root', 'root', 's3DB') or die('Error: Unable to connect');
   // Verify valid access code
   $result = mysqli_query($con, "SELECT * FROM s3Files WHERE accessCode='$accessCode'") or die("Error: Invalid request");
   if (mysqli_num_rows($result) != 1) {
@@ -33,7 +33,7 @@
           'secret' => $IAM_SECRET
         ),
         'version' => 'latest',
-        'region'  => 'us-east-2'
+        'region'  => 'us-west-1'
       )
     );
     //
