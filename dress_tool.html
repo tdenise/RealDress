@@ -63,7 +63,7 @@
 			this.element = element;
 			this.next = null;
 			//potentially for keeping track of which dress is displayed
-			this.id = null;
+			this.id = 0;
 		}
 	  }
 	  class LinkedList{
@@ -77,10 +77,9 @@
 		{
 			var node = new Node(element);
 			var current;
-			if (this.head == null) { 
+			if (this.head == null) 
 				this.head = node; 
-				this.head.id = this.size;
-			} else { 
+			else { 
 				current = this.head;  
 				while (current.next) { 
 					current = current.next; 
