@@ -70,5 +70,6 @@
 	var arrayLength = passedArray.length;
 	for (var i = 0; i < arrayLength; i++) {
 		dressList.add(passedArray[i]);
+		console.log(passedArray[i]);
 	}
 </script>
