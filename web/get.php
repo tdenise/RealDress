@@ -64,6 +64,7 @@
 //    die("Error: " . $e->getMessage());
 //  }
 ?>
+<script src="../assets/js/changedress.js"></script>
 <script>
 	var passedArray = <?php echo json_encode($dressArray); ?>;
 	var arrayLength = passedArray.length;
@@ -71,4 +72,3 @@
 		dressList.add(passedArray[i]);
 	}
 </script>
-<script src="../assets/js/changedress.js"></script>
