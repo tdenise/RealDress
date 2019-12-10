@@ -28,7 +28,9 @@
 		} 
 	  }
 		var dressList = new LinkedList();		
-		
+		for(var i = 0; i < passedArray.length; i++){
+			alert(passedArray[i]);
+		}
 		var arrayLength = passedArray.length;
 		for (var i = 0; i < arrayLength; i++) {
 			dressList.add(passedArray[i]);
