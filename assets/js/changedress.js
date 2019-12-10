@@ -31,6 +31,7 @@
 		
 		var passedArray = <?php echo json_encode($dressArray); ?>
 		passedArray.forEach(arrayAdd);
+		console.log(passedArray.toString());
 		function arrayAdd(dress)
 		{
 			dressList.add(dress);
