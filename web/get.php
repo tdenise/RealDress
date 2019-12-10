@@ -25,6 +25,7 @@ include '../assets/php/info.php';
 		//$dressArray[] = $keyPath;
 		//echo $keyPath;
 	//}
+	echo 'we made it here';
 	print_r($dressArray);
   }
   //$result = mysqli_query($con, "SELECT * FROM s3Files") or die("Error: Invalid request");
