@@ -64,28 +64,8 @@
 //    die("Error: " . $e->getMessage());
 //  }
 ?>
-<script src="../assets/js/changedress.js"></script>
-<script>
-	var dressList = new LinkedList();
-	console.log("dresslist created");
-	var passedArray = <?php echo json_encode($dressArray); ?>;
-	var arrayLength = passedArray.length;
-	for (var i = 0; i < arrayLength; i++) {
-		dressList.add(passedArray[i]);
-		console.log(passedArray[i]);
-	}
-		//dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress1S.png");
-		//dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress2S.png");
-		//dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress3.png");
 
-		var curr = dressList.head;
-		function changeDress()
-		{
-			document.getElementById("clothes").style.backgroundImage = "url(" + curr.element + ")";
-				if(curr.next != null){
-				curr = curr.next;
-				} else {
-				curr = dressList.head;
-				}	
-		}
+<script>	
+	var passedArray = <?php echo json_encode($dressArray); ?>;
 </script>
+<script src="../assets/js/changedress.js"></script>
