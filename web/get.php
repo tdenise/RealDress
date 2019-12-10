@@ -1,5 +1,5 @@
 <?php
-    $bucketName = 'realdress';
+    $BUCKET_NAME = 'realdress';
     $IAM_KEY = 'AKIA5FXIKMXZYLR7J3QX';
 	$IAM_SECRET = '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';
   require '../vendor/autoload.php';
@@ -48,3 +48,4 @@
   } catch (Exception $e) {
     die("Error: " . $e->getMessage());
   }
+?>
