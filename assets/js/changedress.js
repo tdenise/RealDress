@@ -28,7 +28,7 @@
 		} 
 	  }
 		var dressList = new LinkedList();		
-		
+		var passedArray = <?php echo json_encode($dressArray); ?>;
 		//site not updating
 		var arrayLength = passedArray.length;
 		for (var i = 0; i < arrayLength; i++) {
