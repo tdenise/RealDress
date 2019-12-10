@@ -19,14 +19,15 @@ include '../assets/php/info.php';
   print_r($size_calculated);
   //if(round($size_calculated) == 2){
 	  //small
-	$dressArray = mysqli_query($con, "SELECT * FROM dressSmall") or die("Error: Invalid request");
-	//$keyPath = '';
-	//while($row = mysqli_fetch_array($result)) {
-		//$keyPath = $row['s3FilePath'];
-		//$dressArray[] = $keyPath;
-		//echo $keyPath;
-	//}
-	echo 'we made it here';
+	$result = mysqli_query($con, "SELECT * FROM dressSmall") or die("Error: Invalid request");
+	
+	while($row = mysqli_fetch_array($result)) {
+		$keyPath = '';
+		$keyPath = $row['s3FilePath'];
+		$dressArray[] = $keyPath;
+		echo $keyPath;
+
+	}
 	print_r($dressArray);
   //}
   //$result = mysqli_query($con, "SELECT * FROM s3Files") or die("Error: Invalid request");
