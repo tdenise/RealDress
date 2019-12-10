@@ -15,9 +15,9 @@
   $con = mysqli_connect('us-cdbr-iron-east-05.cleardb.net', 'bb72072205ffd6', '02e9938c', 'heroku_8f1b3bade09a482', 3306) or die('Error: Unable to connect');
   // Verify valid access code
   $result = mysqli_query($con, "SELECT * FROM s3Files") or die("Error: Invalid request");
-  if (mysqli_num_rows($result) != 1) {
-    die("Error: Invalid access code");
-  }
+ // if (mysqli_num_rows($result) != 1) {
+ //   die("Error: Invalid access code");
+ // }
   //WHERE accessCode='$accessCode'
   // Get path from db
   $keyPath = '';
