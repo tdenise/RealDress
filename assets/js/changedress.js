@@ -28,13 +28,14 @@
 		} 
 	  }
 		var dressList = new LinkedList();		
-		console.log(passedArray[0]);
+		
 		console.log("here");
 		console.log("head" + dressList.head.element);
 		console.log("and here");
 		var arrayLength = passedArray.length;
 		for (var i = 0; i < arrayLength; i++) {
 			dressList.add(passedArray[i]);
+			console.log(passedArray[i]);
 		}
 		
 		//dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress1S.png");
