@@ -65,6 +65,6 @@ if (isset($_POST['height']) && isset($_POST['chest']) && isset($_POST['waist']) 
 	//file_put_contents($fileName, $waist."\n", FILE_APPEND);
 	//file_put_contents($fileName, $hips."\n", FILE_APPEND);
 	//file_put_contents($fileName, $size_calculated."\n", FILE_APPEND);
-	header("Location: ../../index.html?userfilecreated");
+	header("Location: ../../web/get.php");
 }
 ?>
