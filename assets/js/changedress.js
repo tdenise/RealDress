@@ -29,7 +29,7 @@
 	  }
 		var dressList = new LinkedList();		
 		
-		
+		//site not updating
 		var arrayLength = passedArray.length;
 		for (var i = 0; i < arrayLength; i++) {
 			dressList.add(passedArray[i]);
