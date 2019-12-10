@@ -1,6 +1,3 @@
-	  window.onload=init;
-
-
 	  class Node {
 		constructor(element)
 		{
@@ -31,12 +28,10 @@
 		} 
 	  }
 	  
-	function init()
-	{
 		var dressList = new LinkedList();
 		console.log("dresslist created");
     
-	}
+	
 		//dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress1S.png");
 		//dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress2S.png");
 		//dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress3.png");
