@@ -30,7 +30,11 @@
 		var dressList = new LinkedList();
 		
 		var passedArray = "<?php echo json_encode($dressArray); ?>";
-		passedArray.forEach(item => dressList.add(item));
+		
+		var arrayLength = passedArray.length;
+		for (var i = 0; i < arrayLength; i++) {
+			dressList.add(passedArray[i]);
+		}
 		console.log(passedArray.toString());
 		
 		//dressList.add("/assets/img/dress1.png");
