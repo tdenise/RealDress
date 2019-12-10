@@ -8,7 +8,7 @@ if (isset($_POST['height']) && isset($_POST['chest']) && isset($_POST['waist']) 
 	$hips = $_POST['hips'];
 //$size_chest (1-6)
 	if($chest < 33.5){
-		$size_chest = 1;
+		$size_chest = 2;
 	} elseif ($chest >= 33.5 && $chest < 35){
 		$size_chest = 2;
 	} elseif ($chest >= 35 && $chest < 36.5){
@@ -22,7 +22,7 @@ if (isset($_POST['height']) && isset($_POST['chest']) && isset($_POST['waist']) 
 	}
 //$size_waist (1-6)	
 	if($waist < 24){
-		$size_waist = 1;
+		$size_waist = 2;
 	} elseif ($waist >= 24 && $waist < 25.5){
 		$size_waist = 2;
 	} elseif ($waist >= 25.5 && $waist < 27){
@@ -36,7 +36,7 @@ if (isset($_POST['height']) && isset($_POST['chest']) && isset($_POST['waist']) 
 	}
 //$size_hips (1-6)	
 	if($hips < 33.5){
-		$size_hips = 1;
+		$size_hips = 2;
 	} elseif ($hips >= 33.5 && $hips < 35){
 		$size_hips = 2;
 	} elseif ($hips >= 35 && $hips < 36.5){
@@ -52,19 +52,19 @@ if (isset($_POST['height']) && isset($_POST['chest']) && isset($_POST['waist']) 
 //$size_calculated Average of chest, waist, and hips (1-6)
 	$size_calculated = ($size_chest + $size_waist + $size_hips)/3;
 	
-	$targetFolder = "../../user_profiles/";
-	$fileName = $targetFolder."User_".uniqid('', true).".txt";
+	//$targetFolder = "../../user_profiles/";
+	//$fileName = $targetFolder."User_".uniqid('', true).".txt";
 	/* File Output Format:
 	height value
 	chest value
 	waist value
 	hips value
 	*/
-	file_put_contents($fileName, $height."\n");
-	file_put_contents($fileName, $chest."\n", FILE_APPEND);
-	file_put_contents($fileName, $waist."\n", FILE_APPEND);
-	file_put_contents($fileName, $hips."\n", FILE_APPEND);
-	file_put_contents($fileName, $size_calculated."\n", FILE_APPEND);
+	//file_put_contents($fileName, $height."\n");
+	//file_put_contents($fileName, $chest."\n", FILE_APPEND);
+	//file_put_contents($fileName, $waist."\n", FILE_APPEND);
+	//file_put_contents($fileName, $hips."\n", FILE_APPEND);
+	//file_put_contents($fileName, $size_calculated."\n", FILE_APPEND);
 	header("Location: ../../index.html?userfilecreated");
 }
 ?>

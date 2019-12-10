@@ -1,4 +1,5 @@
 <?php
+include '../assets/php/info.php';
     $BUCKET_NAME = 'realdress';
     $IAM_KEY = 'AKIA5FXIKMXZYLR7J3QX';
 	$IAM_SECRET = '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';
@@ -13,17 +14,26 @@
   $accessCode = htmlspecialchars($accessCode);
   // Connect to database
   $con = mysqli_connect('us-cdbr-iron-east-05.cleardb.net', 'bb72072205ffd6', '02e9938c', 'heroku_8f1b3bade09a482', 3306) or die('Error: Unable to connect');
-  // Verify valid access code
-  $result = mysqli_query($con, "SELECT * FROM s3Files") or die("Error: Invalid request");
- // if (mysqli_num_rows($result) != 1) {
- //   die("Error: Invalid access code");
- // }
-  //WHERE accessCode='$accessCode'
+  
+  //bodySizes, dressSmall, dressMed, dressLarge, dressExtraLarge, dressEElarge
+  var $dressArray = array();
+  if(round($size_calculated) == 2){
+	  //small
+	$dressArray = mysqli_query($con, "SELECT * FROM dressSmall") or die("Error: Invalid request");
+	//$keyPath = '';
+	//while($row = mysqli_fetch_array($result)) {
+		//$keyPath = $row['s3FilePath'];
+		//$dressArray[] = $keyPath;
+		//echo $keyPath;
+	//}
+  }
+  //$result = mysqli_query($con, "SELECT * FROM s3Files") or die("Error: Invalid request");
+
   // Get path from db
   $keyPath = '';
   while($row = mysqli_fetch_array($result)) {
     $keyPath = $row['s3FilePath'];
-    echo $keyPath . " \n";
+    echo $keyPath;
   }
 //  // Get file
 //  try {
