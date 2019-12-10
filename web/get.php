@@ -23,7 +23,7 @@
   $keyPath = '';
   while($row = mysqli_fetch_array($result)) {
     $keyPath = $row['s3FilePath'];
-    echo $keyPath + "\n";
+    echo $keyPath . "\n";
   }
 //  // Get file
 //  try {
