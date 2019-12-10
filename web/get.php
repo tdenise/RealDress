@@ -1,5 +1,5 @@
-<?php
-include '../assets/php/info.php';
+<?php include '../assets/php/info.php';
+
     $BUCKET_NAME = 'realdress';
     $IAM_KEY = 'AKIA5FXIKMXZYLR7J3QX';
 	$IAM_SECRET = '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';
