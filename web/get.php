@@ -25,7 +25,7 @@ include '../assets/php/info.php';
 		$keyPath = '';
 		$keyPath = $row['s3FilePath'];
 		$dressArray[] = $keyPath;
-		echo $keyPath;
+		//echo $keyPath;
 
 	}
 	print_r($dressArray);
