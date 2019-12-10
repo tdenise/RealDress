@@ -29,7 +29,7 @@
 
 	}
 	print_r($dressArray);
-	
+	$passedArray = json_encode($dressArray);
   //}
   //$result = mysqli_query($con, "SELECT * FROM s3Files") or die("Error: Invalid request");
 
@@ -64,5 +64,7 @@
 //    die("Error: " . $e->getMessage());
 //  }
 ?>
-<script type="text/javascript">var passedArray = <?php echo json_encode($dressArray); ?>;</script>
+<script type="text/javascript">
+var passedArray = <?php echo $passedArray; ?>;
+</script>
 <script type="text/javascript" src="../assets/js/changedress.js"></script>
