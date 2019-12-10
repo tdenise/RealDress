@@ -65,6 +65,10 @@
 //  }
 ?>
 <script>
-var passedArray = <?php echo json_encode($dressArray); ?>;
+	var passedArray = <?php echo json_encode($dressArray); ?>;
+	var arrayLength = passedArray.length;
+	for (var i = 0; i < arrayLength; i++) {
+		dressList.add(passedArray[i]);
+	}
 </script>
 <script src="../assets/js/changedress.js"></script>

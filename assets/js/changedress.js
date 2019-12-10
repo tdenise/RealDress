@@ -1,3 +1,6 @@
+	  window.onload=init;
+
+
 	  class Node {
 		constructor(element)
 		{
@@ -27,14 +30,13 @@
 			this.size++;
 		} 
 	  }
-		var dressList = new LinkedList();		
-		var passedArray = <?php echo json_encode($dressArray); ?>;
-		//site not updating
-		var arrayLength = passedArray.length;
-		for (var i = 0; i < arrayLength; i++) {
-			dressList.add(passedArray[i]);
-		}
-		
+	  
+	function init()
+	{
+		var dressList = new LinkedList();
+		console.log("dresslist created");
+    
+	}
 		//dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress1S.png");
 		//dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress2S.png");
 		//dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress3.png");
