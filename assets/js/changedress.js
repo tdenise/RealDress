@@ -29,7 +29,7 @@
 	  }
 		var dressList = new LinkedList();
 		
-		var passedArray = <?php echo json_encode($dressArray); ?>
+		var passedArray = "<?php echo json_encode($dressArray); ?>";
 		passedArray.forEach(arrayAdd);
 		console.log(passedArray.toString());
 		function arrayAdd(dress)
