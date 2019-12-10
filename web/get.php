@@ -23,29 +23,30 @@
   $keyPath = '';
   while($row = mysqli_fetch_array($result)) {
     $keyPath = $row['s3FilePath'];
+    echo $keyPath;
   }
-  // Get file
-  try {
-    $s3 = S3Client::factory(
-      array(
-        'credentials' => array(
-          'key' => $IAM_KEY,
-          'secret' => $IAM_SECRET
-        ),
-        'version' => 'latest',
-        'region'  => 'us-west-1'
-      )
-    );
-    //
-    $result = $s3->getObject(array(
-      'Bucket' => $BUCKET_NAME,
-      'Key'    => $keyPath
-    ));
-    // Display it in the browser
-    header("Content-Type: {$result['ContentType']}");
-    header('Content-Disposition: filename="' . basename($keyPath) . '"');
-    echo $result['Body'];
-  } catch (Exception $e) {
-    die("Error: " . $e->getMessage());
-  }
+//  // Get file
+//  try {
+//    $s3 = S3Client::factory(
+//      array(
+//        'credentials' => array(
+//          'key' => $IAM_KEY,
+//          'secret' => $IAM_SECRET
+//        ),
+//        'version' => 'latest',
+//        'region'  => 'us-west-1'
+//      )
+//    );
+//    //
+//    $result = $s3->getObject(array(
+//      'Bucket' => $BUCKET_NAME,
+//      'Key'    => $keyPath
+//    ));
+//    // Display it in the browser
+//    header("Content-Type: {$result['ContentType']}");
+//    header('Content-Disposition: filename="' . basename($keyPath) . '"');
+//    echo $result['Body'];
+//  } catch (Exception $e) {
+//    die("Error: " . $e->getMessage());
+//  }
 ?>
