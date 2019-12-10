@@ -34,7 +34,7 @@
 			dressList.add(passedArray[i]);
 		}
 		console.log(passedArray.toString());
-		console.log(dressList.head.element);
+		console.log("head" + dressList.head.element);
 		//dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress1S.png");
 		//dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress2S.png");
 		//dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress3.png");

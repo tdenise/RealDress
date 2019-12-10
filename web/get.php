@@ -64,5 +64,5 @@
 //    die("Error: " . $e->getMessage());
 //  }
 ?>
-<script type="text/javascript">var passedArray =<?php echo json_encode($dressArray); ?>;</script>
-<script type="text/javascript" src="changedress.js"></script>
+<script type="text/javascript">var passedArray = <?php echo json_encode($dressArray); ?>;</script>
+<script type="text/javascript" src="../assets/js/changedress.js"></script>
