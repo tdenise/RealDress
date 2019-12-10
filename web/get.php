@@ -31,11 +31,11 @@ include '../assets/php/info.php';
   //$result = mysqli_query($con, "SELECT * FROM s3Files") or die("Error: Invalid request");
 
   // Get path from db
-  $keyPath = '';
-  while($row = mysqli_fetch_array($result)) {
-    $keyPath = $row['s3FilePath'];
-    echo $keyPath;
-  }
+ // $keyPath = '';
+ // while($row = mysqli_fetch_array($result)) {
+//    $keyPath = $row['s3FilePath'];
+//    echo $keyPath;
+//  }
 //  // Get file
 //  try {
 //    $s3 = S3Client::factory(
