@@ -29,6 +29,7 @@
 
 	}
 	echo json_encode($dressArray);
+	//header("Location: ../dress_tool.html");
 	//print_r($dressArray);
   //}
   //$result = mysqli_query($con, "SELECT * FROM s3Files") or die("Error: Invalid request");

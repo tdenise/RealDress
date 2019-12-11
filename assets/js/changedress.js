@@ -25,25 +25,7 @@ class LinkedList {
 	}
 }
 var dressList = new LinkedList();
-var passedArray;
-$(document).ready( function() {
-    $('#prev').click(function() {
-        $.ajax({
-            type: 'POST',
-            url: '../../web/get.php',
-            data: 'id=testdata',
-            dataType: 'json',
-            cache: false,
-            success: function(result) {
-                var arrayLength = result.length;
-				for (var i = 0; i < arrayLength; i++) {
-					dressList.add(result[i]);
-					console.log("Dress: "+result[i]);
-				}
-            },
-        });
-    });
-});
+
 //var passedArray = <?php echo json_encode($dressArray); ?>;
 //var arrayLength = passedArray.length;
 //for (var i = 0; i < arrayLength; i++) {
