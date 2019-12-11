@@ -25,8 +25,9 @@ class LinkedList {
 	}
 }
 var dressList = new LinkedList();
+var passedArray;
 $.get("../../web/get.php", function(data){
-	var passedArray = jQuery.parseJSON(data); 
+	passedArray = data 
 	
 });
 //var passedArray = <?php echo json_encode($dressArray); ?>;
