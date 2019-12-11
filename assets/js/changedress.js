@@ -36,7 +36,7 @@ var dressList = new LinkedList();
 var curr = dressList.head;
 
 function changeDress() {
-	if(curr.element != null){
+	if(curr != null){
 	document.getElementById("clothes").style.backgroundImage = "url(" + curr.element + ")";
 	if (curr.next != null) {
 		curr = curr.next;
