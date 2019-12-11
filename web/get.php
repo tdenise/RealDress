@@ -60,7 +60,7 @@ if ($size_calculated == 2) {
         //echo $keyPath;
         
     }
-} elseif($size_calculated == 6 {
+} elseif($size_calculated == 6) {
 	//extra extra large
 	$result = mysqli_query($con, "SELECT * FROM dressEElarge") or die("Error: Invalid request");
     
