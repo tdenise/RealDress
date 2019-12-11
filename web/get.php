@@ -1,5 +1,6 @@
 <?php include '../assets/php/info.php';
-
+	//user size
+	echo $_GET['s'];
     $BUCKET_NAME = 'realdress';
     $IAM_KEY = 'AKIA5FXIKMXZYLR7J3QX';
 	$IAM_SECRET = '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';
@@ -29,7 +30,7 @@
 
 	}
 	echo json_encode($dressArray);
-	//header("Location: ../dress_tool.html");
+	header("Location: ../dress_tool.html".$_GET['s]);
 	//print_r($dressArray);
   //}
   //$result = mysqli_query($con, "SELECT * FROM s3Files") or die("Error: Invalid request");
