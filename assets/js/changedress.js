@@ -25,16 +25,19 @@ class LinkedList {
 	}
 }
 var dressList = new LinkedList();
-
+$.get("../../web/get.php", function(data){
+	var passedArray = jQuery.parseJSON(data); 
+	
+});
 //var passedArray = <?php echo json_encode($dressArray); ?>;
-//var arrayLength = passedArray.length;
-//for (var i = 0; i < arrayLength; i++) {
-//	dressList.add(passedArray[i]);
-//	console.log("Dress: "+passedArray[i]);
-//}
-dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress1S.png");
-dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress2S.png");
-dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress3.png");
+var arrayLength = passedArray.length;
+for (var i = 0; i < arrayLength; i++) {
+	dressList.add(passedArray[i]);
+	console.log("Dress: "+passedArray[i]);
+}
+//dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress1S.png");
+//dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress2S.png");
+//dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress3.png");
 
 var curr = dressList.head;
 
