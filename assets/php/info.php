@@ -51,6 +51,7 @@ if (isset($_POST['height']) && isset($_POST['chest']) && isset($_POST['waist']) 
 	
 //$size_calculated Average of chest, waist, and hips (1-6)
 	$size_calculated = ($size_chest + $size_waist + $size_hips)/3;
+	$size_pass = round($size_calculated);
 	//echo "<script>console.log('Debug Objects: " . $size_calculated . "' );</script>";
 	
 	//$targetFolder = "../../user_profiles/";
@@ -66,7 +67,7 @@ if (isset($_POST['height']) && isset($_POST['chest']) && isset($_POST['waist']) 
 	//file_put_contents($fileName, $waist."\n", FILE_APPEND);
 	//file_put_contents($fileName, $hips."\n", FILE_APPEND);
 	//file_put_contents($fileName, $size_calculated."\n", FILE_APPEND);
-	header("Location: ../../web/get.php?s=". round($size_calculated));
+	header("Location: ../../web/get.php?size=". ($size_pass));
 	//header("Location: ../../index.html?created");
 }
 ?>

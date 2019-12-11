@@ -15,7 +15,7 @@ $accessCode = htmlspecialchars($accessCode);
 $con = mysqli_connect('us-cdbr-iron-east-05.cleardb.net', 'bb72072205ffd6', '02e9938c', 'heroku_8f1b3bade09a482', 3306) or die('Error: Unable to connect');
 
 //bodySizes, dressSmall, dressMed, dressLarge, dressExtraLarge, dressEElarge
-$size_calculated = $_GET['s'];
+$size_calculated = $_GET['size'];
 if ($size_calculated == 2) {
 	//small
     $result = mysqli_query($con, "SELECT * FROM dressSmall") or die("Error: Invalid request");
