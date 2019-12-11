@@ -32,17 +32,22 @@ var dressList = new LinkedList();
 //	dressList.add(passedArray[i]);
 //	console.log("Dress: "+passedArray[i]);
 //}
-//dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress1S.png");
-//dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress2S.png");
-//dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress3.png");
 
 var curr = dressList.head;
 
 function changeDress() {
+	if(curr.element != null){
 	document.getElementById("clothes").style.backgroundImage = "url(" + curr.element + ")";
 	if (curr.next != null) {
 		curr = curr.next;
 	} else {
 		curr = dressList.head;
+	}
+	} else {
+		console.log("Something went wrong");
+		dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress1S.png");
+		dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress2S.png");
+		dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress3.png");
+
 	}
 }
