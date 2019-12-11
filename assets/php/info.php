@@ -51,7 +51,8 @@ if (isset($_POST['height']) && isset($_POST['chest']) && isset($_POST['waist']) 
 	
 //$size_calculated Average of chest, waist, and hips (1-6)
 	$size_calculated = ($size_chest + $size_waist + $size_hips)/3;
-	echo "<script>console.log('Debug Objects: " . $size_calculated . "' );</script>";
+	//echo "<script>console.log('Debug Objects: " . $size_calculated . "' );</script>";
+	
 	//$targetFolder = "../../user_profiles/";
 	//$fileName = $targetFolder."User_".uniqid('', true).".txt";
 	/* File Output Format:
