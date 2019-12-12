@@ -62,7 +62,7 @@ if ($size_calculated == 2) {
     }
 } elseif($size_calculated == 6) {
 	//extra extra large
-	$result = mysqli_query($con, "SELECT * FROM dressEElarge") or die("Error: Invalid request");
+	$result = mysqli_query($con, "SELECT * FROM dressEELarge") or die("Error: Invalid request");
     
     while ($row = mysqli_fetch_array($result)) {
         $keyPath      = '';
