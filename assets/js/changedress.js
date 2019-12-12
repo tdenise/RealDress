@@ -33,9 +33,9 @@ var dressList = new LinkedList();
 //	console.log("Dress: "+passedArray[i]);
 //}
 
-var curr = dressList.head;
 
 function changeDress() {
+var curr = dressList.head;
 	try {
 		document.getElementById("clothes").style.backgroundImage = "url(" + curr.element + ")";
 		if (curr.next != null) {
