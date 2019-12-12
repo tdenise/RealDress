@@ -33,22 +33,19 @@ var dressList = new LinkedList();
 //	console.log("Dress: "+passedArray[i]);
 //}
 
+var curr = dressList.head;
+	if(curr == null){
+		console.log("Something went wrong");
+		dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress1S.png");
+		dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress2S.png");
+		dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress3.png");
+	}
 
 function changeDress() {
-var curr = dressList.head;
-	try {
 		document.getElementById("clothes").style.backgroundImage = "url(" + curr.element + ")";
 		if (curr.next != null) {
 			curr = curr.next;
 		} else {
 			curr = dressList.head;
 		}
-	} 
-	catch(err) {
-		console.log("Something went wrong");
-		dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress1S.png");
-		dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress2S.png");
-		dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress3.png");
-
-	}
 }
