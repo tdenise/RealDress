@@ -83,8 +83,8 @@ if ($size_calculated == 2) {
         
     }
 }
-echo json_encode($dressArray);
-header("Location: ../dress_tool.html?s=" . $size_calculated);
+//echo json_encode($dressArray);
+header("Location: ../dress_tool.html?s=".$size_calculated);
 //print_r($dressArray);
 //}
 //$result = mysqli_query($con, "SELECT * FROM s3Files") or die("Error: Invalid request");
