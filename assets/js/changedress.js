@@ -26,25 +26,25 @@ class LinkedList {
 }
 var dressList = new LinkedList();
 
-$.ajax({
-	type: "GET",
-	url: "../../web/get.php",
-	success: function(data){
-		console.log(data);
-	}
-});
+//$.ajax({
+//	type: "GET",
+//	url: "../../web/get.php",
+//	success: function(data){
+//		console.log(data);
+//	}
+//});
 //var passedArray = <?php echo json_encode($dressArray); ?>;
 //var arrayLength = passedArray.length;
 //for (var i = 0; i < arrayLength; i++) {
 //	dressList.add(passedArray[i]);
 //	console.log("Dress: "+passedArray[i]);
 //}
-function addList(){
-	for (var i = 0; i < arrayLength; i++) {
-	dressList.add(passedArray[i]);
-	console.log("Dress: "+passedArray[i]);
-	}
-}
+//function addList(){
+	//for (var i = 0; i < arrayLength; i++) {
+	//dressList.add(passedArray[i]);
+	//console.log("Dress: "+passedArray[i]);
+	//}
+//}
 var curr = dressList.head;
 
 	if(curr == null){
