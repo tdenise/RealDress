@@ -36,14 +36,15 @@ var dressList = new LinkedList();
 var curr = dressList.head;
 
 function changeDress() {
-	if(curr != null){
-	document.getElementById("clothes").style.backgroundImage = "url(" + curr.element + ")";
-	if (curr.next != null) {
-		curr = curr.next;
-	} else {
-		curr = dressList.head;
-	}
-	} else {
+	try {
+		document.getElementById("clothes").style.backgroundImage = "url(" + curr.element + ")";
+		if (curr.next != null) {
+			curr = curr.next;
+		} else {
+			curr = dressList.head;
+		}
+	} 
+	catch(err) {
 		console.log("Something went wrong");
 		dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress1S.png");
 		dressList.add("https://realdress.s3-us-west-1.amazonaws.com/user_uploads/dress2S.png");
